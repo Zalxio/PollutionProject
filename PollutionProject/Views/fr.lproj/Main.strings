@@ -1,0 +1,12 @@
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "QFr-zV-pL6"; */
+"QFr-zV-pL6.title" = "Accueil";
+
+/* Class = "UITabBarItem"; title = "Photo"; ObjectID = "dJh-u3-SNj"; */
+"dJh-u3-SNj.title" = "Photo";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "e7t-Nm-3HF"; */
+"e7t-Nm-3HF.title" = "Carte";
+
+/* Class = "UITabBarItem"; title = "Dashboard"; ObjectID = "qFD-7D-5sP"; */
+"qFD-7D-5sP.title" = "Tableau de bord";

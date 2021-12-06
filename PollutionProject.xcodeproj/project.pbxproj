@@ -13,6 +13,8 @@
 		FC0E93B2275E540B00484949 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC0E93B0275E540B00484949 /* Main.storyboard */; };
 		FC0E93B4275E540D00484949 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC0E93B3275E540D00484949 /* Assets.xcassets */; };
 		FC0E93B7275E540D00484949 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC0E93B5275E540D00484949 /* LaunchScreen.storyboard */; };
+		FC0E93C4275E79F600484949 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC0E93C6275E79F600484949 /* Localizable.strings */; };
+		FC0E93CA275E7C3C00484949 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E93C9275E7C3C00484949 /* MapVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		FC0E93B3275E540D00484949 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC0E93B6275E540D00484949 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC0E93B8275E540D00484949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC0E93C5275E79F600484949 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FC0E93C7275E7A2300484949 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		FC0E93C8275E7A2300484949 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FC0E93C9275E7C3C00484949 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,49 @@
 		FC0E93A9275E540B00484949 /* PollutionProject */ = {
 			isa = PBXGroup;
 			children = (
-				FC0E93AA275E540B00484949 /* AppDelegate.swift */,
-				FC0E93AC275E540B00484949 /* SceneDelegate.swift */,
-				FC0E93AE275E540B00484949 /* ViewController.swift */,
-				FC0E93B0275E540B00484949 /* Main.storyboard */,
-				FC0E93B3275E540D00484949 /* Assets.xcassets */,
-				FC0E93B5275E540D00484949 /* LaunchScreen.storyboard */,
-				FC0E93B8275E540D00484949 /* Info.plist */,
+				FC0E93C0275E543B00484949 /* SupportingFiles */,
+				FC0E93C1275E545100484949 /* Models */,
+				FC0E93BF275E542300484949 /* Controlleurs */,
+				FC0E93BE275E541800484949 /* Views */,
 			);
 			path = PollutionProject;
+			sourceTree = "<group>";
+		};
+		FC0E93BE275E541800484949 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC0E93B0275E540B00484949 /* Main.storyboard */,
+				FC0E93B5275E540D00484949 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FC0E93BF275E542300484949 /* Controlleurs */ = {
+			isa = PBXGroup;
+			children = (
+				FC0E93AE275E540B00484949 /* ViewController.swift */,
+				FC0E93C9275E7C3C00484949 /* MapVC.swift */,
+			);
+			path = Controlleurs;
+			sourceTree = "<group>";
+		};
+		FC0E93C0275E543B00484949 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				FC0E93AA275E540B00484949 /* AppDelegate.swift */,
+				FC0E93AC275E540B00484949 /* SceneDelegate.swift */,
+				FC0E93B3275E540D00484949 /* Assets.xcassets */,
+				FC0E93B8275E540D00484949 /* Info.plist */,
+				FC0E93C6275E79F600484949 /* Localizable.strings */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		FC0E93C1275E545100484949 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,6 +149,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = FC0E939E275E540B00484949;
 			productRefGroup = FC0E93A8275E540B00484949 /* Products */;
@@ -126,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC0E93B7275E540D00484949 /* LaunchScreen.storyboard in Resources */,
+				FC0E93C4275E79F600484949 /* Localizable.strings in Resources */,
 				FC0E93B4275E540D00484949 /* Assets.xcassets in Resources */,
 				FC0E93B2275E540B00484949 /* Main.storyboard in Resources */,
 			);
@@ -139,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC0E93AF275E540B00484949 /* ViewController.swift in Sources */,
+				FC0E93CA275E7C3C00484949 /* MapVC.swift in Sources */,
 				FC0E93AB275E540B00484949 /* AppDelegate.swift in Sources */,
 				FC0E93AD275E540B00484949 /* SceneDelegate.swift in Sources */,
 			);
@@ -151,6 +194,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FC0E93B1275E540B00484949 /* Base */,
+				FC0E93C7275E7A2300484949 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -163,6 +207,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		FC0E93C6275E79F600484949 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC0E93C5275E79F600484949 /* en */,
+				FC0E93C8275E7A2300484949 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -170,6 +223,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -231,6 +285,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -291,7 +346,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B77729XLR5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PollutionProject/Info.plist;
+				INFOPLIST_FILE = PollutionProject/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -319,7 +374,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B77729XLR5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PollutionProject/Info.plist;
+				INFOPLIST_FILE = PollutionProject/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
