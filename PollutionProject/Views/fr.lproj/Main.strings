@@ -1,12 +1,18 @@
 
 /* Class = "UITabBarItem"; title = "Home"; ObjectID = "QFr-zV-pL6"; */
-"QFr-zV-pL6.title" = "Accueil";
+"QFr-zV-pL6.title" = "Home";
 
 /* Class = "UITabBarItem"; title = "Photo"; ObjectID = "dJh-u3-SNj"; */
 "dJh-u3-SNj.title" = "Photo";
 
 /* Class = "UITabBarItem"; title = "Map"; ObjectID = "e7t-Nm-3HF"; */
-"e7t-Nm-3HF.title" = "Carte";
+"e7t-Nm-3HF.title" = "Map";
+
+/* Class = "UIButton"; configuration.title = "Take a photo"; ObjectID = "myA-4u-Os7"; */
+"myA-4u-Os7.configuration.title" = "Prendre une photo";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "myA-4u-Os7"; */
+"myA-4u-Os7.normalTitle" = "Button";
 
 /* Class = "UITabBarItem"; title = "Dashboard"; ObjectID = "qFD-7D-5sP"; */
-"qFD-7D-5sP.title" = "Tableau de bord";
+"qFD-7D-5sP.title" = "Dashboard";
