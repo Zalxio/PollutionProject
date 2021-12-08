@@ -15,6 +15,7 @@
 		FC0E93B7275E540D00484949 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC0E93B5275E540D00484949 /* LaunchScreen.storyboard */; };
 		FC0E93C4275E79F600484949 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC0E93C6275E79F600484949 /* Localizable.strings */; };
 		FC0E93CA275E7C3C00484949 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E93C9275E7C3C00484949 /* MapVC.swift */; };
+		FC800ECD2760A77D00D3F432 /* StatePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC800ECC2760A77D00D3F432 /* StatePopUpVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FC0E93C9275E7C3C00484949 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		FC0E93CB275F1FDB00484949 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		FC0E93CC275F208700484949 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FC800ECC2760A77D00D3F432 /* StatePopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePopUpVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				FC0E93AE275E540B00484949 /* PictureVC.swift */,
 				FC0E93C9275E7C3C00484949 /* MapVC.swift */,
+				FC800ECC2760A77D00D3F432 /* StatePopUpVC.swift */,
 			);
 			path = Controlleurs;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			files = (
 				FC0E93AF275E540B00484949 /* PictureVC.swift in Sources */,
 				FC0E93CA275E7C3C00484949 /* MapVC.swift in Sources */,
+				FC800ECD2760A77D00D3F432 /* StatePopUpVC.swift in Sources */,
 				FC0E93AB275E540B00484949 /* AppDelegate.swift in Sources */,
 				FC0E93AD275E540B00484949 /* SceneDelegate.swift in Sources */,
 			);
