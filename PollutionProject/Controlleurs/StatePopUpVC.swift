@@ -13,7 +13,7 @@ protocol StateVCDelegate{
 
 class StatePopUpVC: UIViewController {
     
-    @IBOutlet weak var contentview: UIView!
+    @IBOutlet weak var popUpView: UIView!
     @IBOutlet var buttons: [UIButton]!
     
     var state = StatePollution.none
@@ -21,15 +21,24 @@ class StatePopUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        designView()
         designPopup()
         initButtons()
-        print(state)
+        //print(state)
     }
     
     //MARK: View
     private func designPopup(){
-        contentview.layer.cornerRadius = 20
-        contentview.backgroundColor = .systemGray5
+        popUpView.layer.cornerRadius = 20
+        popUpView.backgroundColor = .systemGray5
+    }
+    
+    private func designView(){
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.insertSubview(blurEffectView, at:0)
     }
     
     //MARK: buttons
@@ -52,27 +61,27 @@ class StatePopUpVC: UIViewController {
     }
     
     @IBAction func actionStateOne(_ sender: Any) {
-        updateState(StatePollution.pollutedPlace)
+        updateState(StatePollution.none)
     }
     
     @IBAction func actionStateTwo(_ sender: Any) {
-        updateState(StatePollution.abandonedObjects)
+        updateState(StatePollution.pollutedPlace)
     }
     
     @IBAction func actionStateThree(_ sender: Any) {
-        updateState(StatePollution.lighting)
+        updateState(StatePollution.abandonedObjects)
     }
     
     @IBAction func actionStateFour(_ sender: Any) {
-        updateState(StatePollution.floraWildlife)
+        updateState(StatePollution.lighting)
     }
     
     @IBAction func actionStateFive(_ sender: Any) {
-        updateState(StatePollution.tag)
+        updateState(StatePollution.floraWildlife)
     }
     
     @IBAction func actionStateSix(_ sender: Any) {
-        updateState(StatePollution.none)
+        updateState(StatePollution.tag)
     }
     
     private func updateState(_ newState: StatePollution){
@@ -89,18 +98,13 @@ class StatePopUpVC: UIViewController {
         print(state)
         dismiss(animated: true, completion: nil)
     }
-    
-    
-    
-    
-    
 }
 
 enum StatePollution : Int{
-    case pollutedPlace = 0;
-    case abandonedObjects = 1;
-    case lighting = 2;
-    case floraWildlife = 3;
-    case tag = 4;
-    case none = 5;
+    case none = 0;
+    case pollutedPlace = 1;
+    case abandonedObjects = 2;
+    case lighting = 3;
+    case floraWildlife = 4;
+    case tag = 5;
 }

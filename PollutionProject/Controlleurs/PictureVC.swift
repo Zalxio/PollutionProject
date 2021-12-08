@@ -16,6 +16,7 @@ class PictureVC: UIViewController{
     @IBOutlet weak var descriptionBt: UITextView!
     
     var state = StatePollution.none
+    var priority = PriorityLevel.none
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,8 @@ class PictureVC: UIViewController{
     //MARK: State
     private func updateTitleState(){
         switch state{
+        case .none:
+            stateBt.setTitle("None", for: .normal)
         case .pollutedPlace:
             stateBt.setTitle("Polluted Place", for: .normal)
         case .abandonedObjects:
@@ -47,21 +50,35 @@ class PictureVC: UIViewController{
             stateBt.setTitle("Flora & Wildlife", for: .normal)
         case .tag:
             stateBt.setTitle("Tag", for: .normal)
-        case .none:
-            stateBt.setTitle("None", for: .normal)
         }
     }
     
     //MARK: Priority Level
+    private func updateTitlePriority(){
+        switch priority {
+        case .none:
+            priorityBt.setTitle("None", for: .normal)
+        case .uncomfortable:
+            priorityBt.setTitle("Uncomfortable", for: .normal)
+        case .veryUncomfortable:
+            priorityBt.setTitle("Very Uncomfortble", for: .normal)
+        case .dangerous:
+            priorityBt.setTitle("Dangerous", for: .normal)
+        }
+    }
     
     //MARK: Description
     
     //MARK: Pass Data & Data core
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "stateSegue"{
-            let sView = segue.destination as! StatePopUpVC
-            sView.delegate = self
-            sView.state = state
+            let stateView = segue.destination as! StatePopUpVC
+            stateView.delegate = self
+            stateView.state = state
+        }else if segue.identifier == "prioritySegue"{
+            let priorityView = segue.destination as! PriorityLVC
+            priorityView.priorityDelegate = self
+            priorityView.priority = priority
         }
     }
     
@@ -107,7 +124,6 @@ extension PictureVC : UITextViewDelegate{
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        
         if text == "\n"{
             descriptionBt.resignFirstResponder()
             return false
@@ -121,5 +137,12 @@ extension PictureVC: StateVCDelegate{
     func stateButton(_ stateChoose: StatePollution) {
         self.state = stateChoose
         updateTitleState()
+    }
+}
+
+extension PictureVC: PriorityLevelDelegate{
+    func priorityLevelButton(_ priority: PriorityLevel) {
+        self.priority = priority
+        self.updateTitlePriority()
     }
 }
