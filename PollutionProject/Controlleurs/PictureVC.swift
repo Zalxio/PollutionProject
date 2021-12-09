@@ -6,22 +6,39 @@
 //
 
 import UIKit
+import CoreLocation
 
 class PictureVC: UIViewController{
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var takephoto: UIButton!
+    @IBOutlet weak var sliderD: UISlider!
     @IBOutlet weak var stateBt: UIButton!
     @IBOutlet weak var priorityBt: UIButton!
     @IBOutlet weak var descriptionBt: UITextView!
     
+    var locationManager = CLLocationManager()
+    
+    // lot of data for created a dump
+    var image: UIImage?
+    var positionX: Double? = 0
+    var positionY: Double? = 0
+    var degradation: Int? = 0
     var state = StatePollution.none
     var priority = PriorityLevel.none
+    var textInfo: String? = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         descriptionBt.delegate = self
         descriptionBt.returnKeyType = .done
+        image = imageView.image
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(doubleTap(_:)))
+        tapGesture.numberOfTapsRequired = 2
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGesture)
+        
     }
     
     //MARK: Piture
@@ -34,6 +51,24 @@ class PictureVC: UIViewController{
     }
     
     //MARK: localisation
+    // use this fonction when he take a picture or when he tap on button save
+    private func takePosition(){
+        if let x = locationManager.location?.coordinate.latitude{
+            positionX = x
+            //print(x)
+        }
+        if let y = locationManager.location?.coordinate.longitude{
+            positionY = y
+            //print(y)
+        }
+    }
+    
+    //MARK: Slider
+    
+    @IBAction func changeValueSliderD(_ sender: Any) {
+        degradation = Int(sliderD.value)
+        print(degradation!)
+    }
     
     //MARK: State
     private func updateTitleState(){
@@ -69,6 +104,8 @@ class PictureVC: UIViewController{
     
     //MARK: Description
     
+    /* cette partie est faite lorsque le mode edition de textView est fini*/
+    
     //MARK: Pass Data & Data core
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "stateSegue"{
@@ -79,12 +116,20 @@ class PictureVC: UIViewController{
             let priorityView = segue.destination as! PriorityLVC
             priorityView.priorityDelegate = self
             priorityView.priority = priority
+        }else if segue.identifier == "zoomSegue"{
+            let zoomView = segue.destination as! ZoomVC
+            //zoomView.priorityDelegate = self
+            zoomView.image = self.image!
         }
     }
     
     /* Write here code for save data*/
     
-    
+    //MARK: Gesture
+ 
+    @objc func doubleTap(_ sender: Any) {
+        performSegue(withIdentifier: "zoomSegue", sender: self)
+    }
 }
 
 extension PictureVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
@@ -99,8 +144,10 @@ extension PictureVC : UIImagePickerControllerDelegate, UINavigationControllerDel
         picker.dismiss(animated: true, completion: nil)
         
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else{return}
+        self.image = image
         imageView.image = image
         imageView.contentMode = .scaleToFill
+        takePosition()
     }
 }
 
@@ -114,11 +161,14 @@ extension PictureVC : UITextViewDelegate{
     
     func textViewDidEndEditing(_ textView: UITextView) {
         descriptionBt.backgroundColor = .white
-        if let str = textView.text{
-            print(str)
-        }
-        if descriptionBt.text.isEmpty{
+        if textView.text.isEmpty{
             descriptionBt.text = "Click here to add more information !"
+            textInfo = nil
+        }else{
+            if let str = textView.text{
+                textInfo = str
+                //print(str)
+            }
         }
         
     }
@@ -146,3 +196,4 @@ extension PictureVC: PriorityLevelDelegate{
         self.updateTitlePriority()
     }
 }
+

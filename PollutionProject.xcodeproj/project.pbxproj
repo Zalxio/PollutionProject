@@ -17,6 +17,7 @@
 		FC0E93CA275E7C3C00484949 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E93C9275E7C3C00484949 /* MapVC.swift */; };
 		FC800ECD2760A77D00D3F432 /* StatePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC800ECC2760A77D00D3F432 /* StatePopUpVC.swift */; };
 		FCD4C0542761241000797507 /* PriorityLVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD4C0532761241000797507 /* PriorityLVC.swift */; };
+		FCD4C0562761BBB600797507 /* ZoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD4C0552761BBB600797507 /* ZoomVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		FC0E93CC275F208700484949 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FC800ECC2760A77D00D3F432 /* StatePopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatePopUpVC.swift; sourceTree = "<group>"; };
 		FCD4C0532761241000797507 /* PriorityLVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityLVC.swift; sourceTree = "<group>"; };
+		FCD4C0552761BBB600797507 /* ZoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				FC0E93C9275E7C3C00484949 /* MapVC.swift */,
 				FC800ECC2760A77D00D3F432 /* StatePopUpVC.swift */,
 				FCD4C0532761241000797507 /* PriorityLVC.swift */,
+				FCD4C0552761BBB600797507 /* ZoomVC.swift */,
 			);
 			path = Controlleurs;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				FC0E93AF275E540B00484949 /* PictureVC.swift in Sources */,
 				FC0E93CA275E7C3C00484949 /* MapVC.swift in Sources */,
 				FC800ECD2760A77D00D3F432 /* StatePopUpVC.swift in Sources */,
+				FCD4C0562761BBB600797507 /* ZoomVC.swift in Sources */,
 				FCD4C0542761241000797507 /* PriorityLVC.swift in Sources */,
 				FC0E93AB275E540B00484949 /* AppDelegate.swift in Sources */,
 				FC0E93AD275E540B00484949 /* SceneDelegate.swift in Sources */,

@@ -65,10 +65,6 @@ class MapVC: UIViewController {
 }
 
 extension MapVC: CLLocationManagerDelegate{
-    // pour mettre à jour la position de l'utilisateur sur la carte
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    }
-    
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         locationAuthorization()     // vérifie l'authorisation quand il change
     }

@@ -24,14 +24,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="713"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F7E-f4-Yox">
-                                                <rect key="frame" x="0.0" y="-1.5" width="414" height="253"/>
+                                                <rect key="frame" x="0.0" y="1" width="414" height="247.5"/>
                                                 <color key="backgroundColor" systemColor="systemGray3Color"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="KBj-JD-Ftx"/>
                                                 </constraints>
-                                                <imageReference key="image" image="photo" catalog="system" symbolScale="large"/>
-                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="thin"/>
+                                                <imageReference key="image" image="photo" catalog="system" symbolScale="default"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myA-4u-Os7">
                                                 <rect key="frame" x="107" y="260" width="200" height="31"/>
@@ -58,6 +58,9 @@
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="d9w-rv-O7t">
                                                 <rect key="frame" x="48" y="405" width="318" height="31"/>
+                                                <connections>
+                                                    <action selector="changeValueSliderD:" destination="ahb-Zw-5hs" eventType="valueChanged" id="B1a-kf-XhQ"/>
+                                                </connections>
                                             </slider>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBi-f3-brK">
                                                 <rect key="frame" x="45" y="460" width="157" height="21"/>
@@ -174,8 +177,10 @@
                         <outlet property="descriptionBt" destination="gYo-kY-00k" id="6Ad-Gw-GC5"/>
                         <outlet property="imageView" destination="F7E-f4-Yox" id="iP4-vN-YJm"/>
                         <outlet property="priorityBt" destination="vKy-cw-6Mt" id="01S-Px-5q6"/>
+                        <outlet property="sliderD" destination="d9w-rv-O7t" id="X23-lh-Fzh"/>
                         <outlet property="stateBt" destination="cpf-7k-mD8" id="wO7-sK-ijb"/>
                         <outlet property="takephoto" destination="myA-4u-Os7" id="P66-69-xCo"/>
+                        <segue destination="vUK-QU-hNr" kind="presentation" identifier="zoomSegue" id="CBS-th-iQe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIe-7q-oru" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -393,6 +398,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SuO-uU-jQ8"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="9UZ-aG-3GS" firstAttribute="centerX" secondItem="Dqq-Sv-f22" secondAttribute="centerX" id="JH3-0P-w9i"/>
                             <constraint firstItem="9UZ-aG-3GS" firstAttribute="centerY" secondItem="Dqq-Sv-f22" secondAttribute="centerY" id="s6C-bY-43J"/>
@@ -409,6 +415,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5NU-c9-7z9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-378.26086956521743" y="2972.5446428571427"/>
+        </scene>
+        <!--ZoomVC-->
+        <scene sceneID="ZBR-Wz-StP">
+            <objects>
+                <viewController id="vUK-QU-hNr" customClass="ZoomVC" customModule="PollutionProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9j5-Ye-eUg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fd1-3z-8tB">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="slR-WW-zsk" appends="YES" id="bZq-Xx-2Rx"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cZE-B1-FQe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fd1-3z-8tB" firstAttribute="top" secondItem="cZE-B1-FQe" secondAttribute="top" id="9ep-Ib-Fg0"/>
+                            <constraint firstAttribute="bottom" secondItem="fd1-3z-8tB" secondAttribute="bottom" id="AJh-93-ZKH"/>
+                            <constraint firstItem="fd1-3z-8tB" firstAttribute="leading" secondItem="cZE-B1-FQe" secondAttribute="leading" id="KgH-IM-406"/>
+                            <constraint firstItem="fd1-3z-8tB" firstAttribute="trailing" secondItem="cZE-B1-FQe" secondAttribute="trailing" id="pcF-OH-VE7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="fd1-3z-8tB" id="jo6-a5-z4e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0hj-Yi-ZSR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="slR-WW-zsk"/>
+            </objects>
+            <point key="canvasLocation" x="-381.15942028985512" y="3644.8660714285711"/>
         </scene>
         <!--Home-->
         <scene sceneID="eGa-Ai-8dE">
